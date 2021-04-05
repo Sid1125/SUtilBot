@@ -1,12 +1,16 @@
 {
   "name": "sutilbot",
   "version": "12.19.0",
-  "main": "index.js",
+  "main": "bot.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZerioDev/Music-bot.git"
+    "url": ""
   },
-  "author": "ZerioDev",
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
