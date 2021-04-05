@@ -1,0 +1,35 @@
+{
+  "name": "sutilbot",
+  "version": "12.19.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZerioDev/Music-bot.git"
+  },
+  "author": "ZerioDev",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "canvacord": "^5.1.0",
+    "discord-economy": "^1.2.2",
+    "discord-player": "^3.0.3",
+    "discord.js": "^12.2.0",
+    "ffmpeg-static": "^4.2.7",
+    "node-fetch": "^2.6.1",
+    "node-pre-gyp": "^0.17.0",
+    "opusscript": "0.0.7",
+    "sequelize": "^6.3.5",
+    "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master",
+    "ytdl-core": "^4.5.0",
+    "ytdl-core-discord": "^1.2.4"
+  },
+  "description": "A complete code to download for a music bot. Using a module (discord-player) 🎧",
+  "bugs": {
+    "url": "https://github.com/ZerioDev/Music-bot/issues"
+  },
+  "homepage": "https://github.com/ZerioDev/Music-bot#readme",
+  "devDependencies": {},
+  "scripts": {
+    "test": "s#help"
+  }
+}
