@@ -189,4 +189,4 @@ client.once('ready', () => {
 });
 
 
-client.login("NzU2NTM4NDY5MTA2NTgxNTU0.X2TTWg.ATyc8ENWTesf_1uYpETBgmA8HA4");
+client.login(process.env.DJS_TOKEN);
