@@ -7,8 +7,8 @@
     "url": ""
   },
   "engines": {
-    "node": ">=10.0.0",
-    "npm": ">=6.0.0"
+    "node": "14.15.4",
+    "npm": "6.14.10"
   },
   "author": "",
   "license": "MIT",
@@ -28,10 +28,7 @@
     "ytdl-core": "^4.5.0",
     "ytdl-core-discord": "^1.2.4"
   },
-  "description": "A complete code to download for a music bot. Using a module (discord-player) 🎧",
-  "bugs": {
-    "url": ""
-  },
+ 
   "homepage": "",
   "devDependencies": {},
   "scripts": {
