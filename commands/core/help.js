@@ -16,10 +16,9 @@ module.exports = {
                     
                     
                     fields: [
-                        { name: 'Bot', value: '`debug`, `ping`, `ego`, `stats`, `sum`, `multiply`' },
+                        { name: 'Bot', value: '`debug`, `ping`' },
 						{ name: 'No prefix', value: '`dream`, `technoblade`, `wilbursoot`, `bbs`, `rasode me kon tha`, `drista`, `RIP`' },
 						{ name: 'Roleplay (no prefix)', value: '`lets fight`, `no u`, `ghostbot`, `so what`' },
-						{ name: 'Economy', value: '`bal`, `work`, `daily`, `inv`, `buy`, `shop`, `slots`, `dice`, `cflip`, `trans`, `lb`, `rdaily`' },
                         { name: 'Music', value: music },
                         { name: 'Filters', value: '`bassboost`, `8D`, `vaporwave`, `nightcore`, `phaser`, `tremolo`, `vibrato`, `reverse`, `treble`, `normalizer`, `surrounding`, `pulsator`, `subboost`, `karaoke`, `flanger`, `gate`, `haas`, `mcompand`' },
                     ],
