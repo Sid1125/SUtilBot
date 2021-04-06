@@ -1,12 +1,16 @@
 {
   "name": "sutilbot",
   "version": "12.19.0",
-  "main": "index.js",
+  "main": "bot.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZerioDev/Music-bot.git"
+    "url": ""
   },
-  "author": "ZerioDev",
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
@@ -26,9 +30,9 @@
   },
   "description": "A complete code to download for a music bot. Using a module (discord-player) 🎧",
   "bugs": {
-    "url": "https://github.com/ZerioDev/Music-bot/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/ZerioDev/Music-bot#readme",
+  "homepage": "",
   "devDependencies": {},
   "scripts": {
     "test": "s#help"
