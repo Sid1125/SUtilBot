@@ -11,6 +11,7 @@ const currency = new Discord.Collection();
 const fetch = require('node-fetch');
 const { GiveawaysManager } = require('discord-giveaways');
 const PREFIX = 's#';
+const welcome = require('./welcome')
 
 
 const config = require('./config.json');
@@ -108,6 +109,7 @@ jsfiles.forEach((f,i)=>{
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
+	welcome(client);
   });
   client.on("message", async message => {
     if(message.author.client) return;
