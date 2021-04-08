@@ -6,7 +6,8 @@ module.exports.run = async(client,message,args)=>{
   	message.delete();
 	const messageToSay = args.join(" ");
   const sayEmbed = new Discord.MessageEmbed()
-    .setTitle(`${message.author.tag} said: ${messageToSay}`)
+    .setTitle(`${message.author.tag} said: `)
+.setDescription(`${messageToSay}`)
     .setFooter(message.author.tag, message.author.displayAvatarURL())
 	.setColor('BLUE')
 	.setTimestamp();
