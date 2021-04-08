@@ -4,7 +4,8 @@ const client = new Discord.Client();
 
 module.exports.run = async(client,message,args)=>{
 const statsEmbed = new Discord.MessageEmbed()
-    .setTitle(`Server count: ${client.guilds.cache.size}`)
+    .setTitle(`Bot Stats`)
+ .setDescription(`Server count: ${client.guilds.cache.size}\nPing: **${client.ws.ping}ms**\nRobot connected in **${client.voice.connections.size}** channels !`)
     .setColor('BLUE')
     .setTimestamp();
 
