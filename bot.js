@@ -14,7 +14,7 @@ const PREFIX = 's#';
 
 
   
-})
+
 
 client.giveawaysManager = new GiveawaysManager(client, {
     storage: "./giveaways.json",
