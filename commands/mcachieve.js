@@ -1,9 +1,5 @@
 const Discord = require('discord.js')
-module.exports.run = {
-  name: 'minecraft',
-
-
-  async execute(client , message , args) {
+module.exports.run = async execute(client , message , args) {
   const sentence = args.join("+")
     
     if (!sentence) return message.channel.send('Please specify a text.')
