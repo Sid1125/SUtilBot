@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const Schema = require('../bot');
+const Schema = require('../models/welcomeChannel');
 
 module.exports.run = async(client,message,args)=>{
  if(!message.member.hasPermission('ADMINISTRATOR')) return;
