@@ -13,10 +13,8 @@ const { GiveawaysManager } = require('discord-giveaways');
 const PREFIX = 's#';
 
 
-const config = require('./config.json');
-client.config = config;
+  
 
-// Init discord giveaways
 
 client.giveawaysManager = new GiveawaysManager(client, {
     storage: "./giveaways.json",
@@ -108,6 +106,7 @@ jsfiles.forEach((f,i)=>{
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
+	
   });
   client.on("message", async message => {
     if(message.author.client) return;
