@@ -11,35 +11,6 @@ const currency = new Discord.Collection();
 const fetch = require('node-fetch');
 const { GiveawaysManager } = require('discord-giveaways');
 const PREFIX = 's#';
-const mongo = require('mongoose')
-
-mongo.connect('mongodb+srv://SUtilBotUser:ssinha@1125@sutilbot-beta.2ecbj.mongodb.net/Data', {useNewUrlParser: true, useUnifiedTopology: true})
-
-const config = require('./config.json');
-client.config = config;
-
-// Init discord giveaways
-
-client.on('guildMemberAdd', async(member) => {
-	Schema.findOne({ Guild: member.guild.id }, async(err, data) => {
-		if(!data) return;
-const user = member.user;
-
-		
-
-const channel = member.guild.channels.cache.get(data.Channel);
-
-
-channel.send(
-                    new Discord.MessageEmbed()
-                        .setTitle(`Welcome ${member}!, Enjoy your stay at ${member.guild.name}! `)     
-                        .setImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5B73NVrODIjdj8OOsYjvBNsxpNR-gm4egBg&usqp=CAU')
-                        .setColor("BLUE")
-                        .setDescription(`Glad you are here !!!!\nBe sure to check the Rules of the server!`)
-                )
-
-
-});
 
 
   
