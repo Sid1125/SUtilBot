@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const Schema = require('../models/welcomeChannel');
+const Schema = require('../bot');
 
 module.exports.run = async(client,message,args)=>{
 
