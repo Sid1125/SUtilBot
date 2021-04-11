@@ -12,14 +12,7 @@ const fetch = require('node-fetch');
 const { GiveawaysManager } = require('discord-giveaways');
 const PREFIX = 's#';
 const mongo = require('mongoose');
-
-
-const Schema = new mongo.Schema({
-    Guild: String,
-    Channel: String,
-});
-
-module.exports = mongo.model("welcome", Schema);
+const Schema = require('./models/welcomeChannel');
 
 mongo.connect('mongodb+srv://SUtilBotUser:ssinha@1125@sutilbot-beta.2ecbj.mongodb.net/Data', {useNewUrlParser: true, useUnifiedTopology: true})
 
@@ -40,10 +33,10 @@ const channel = member.guild.channels.cache.get(data.Channel);
 
 channel.send(
                     new Discord.MessageEmbed()
-                        .setTitle(`Welcome!, Enjoy your stay at ${member.guild.name}! `)     
+                        .setTitle(`Welcome ${member}!, Enjoy your stay at ${member.guild.name}! `)     
                         .setImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5B73NVrODIjdj8OOsYjvBNsxpNR-gm4egBg&usqp=CAU')
                         .setColor("BLUE")
-                        .setDescription(`Glad you are here ${member} !!!!\nBe sure to check the Rules of the server!`)
+                        .setDescription(`Glad you are here !!!!\nBe sure to check the Rules of the server!`)
                 )
 
 
