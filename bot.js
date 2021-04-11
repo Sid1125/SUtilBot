@@ -12,7 +12,9 @@ const fetch = require('node-fetch');
 const { GiveawaysManager } = require('discord-giveaways');
 const PREFIX = 's#';
 const welcome = require('./welcome')
+const mongo = require('mongoose')
 
+mongo.connect('mongodb+srv://SUtilBotUser:ssinha@1125@sutilbot-beta.2ecbj.mongodb.net/Data', {useNewUrlParser: true, useUnifiedTopology: true})
 
 const config = require('./config.json');
 client.config = config;
