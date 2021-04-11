@@ -10,7 +10,7 @@ const fs = require('fs');
 const currency = new Discord.Collection();
 const fetch = require('node-fetch');
 const { GiveawaysManager } = require('discord-giveaways');
-const prefix = require('./models/prefix');
+const prefix = s#;
 const mongo = require('mongoose');
 const Schema = require('./models/welcomeChannel');
 
