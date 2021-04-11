@@ -4,7 +4,7 @@ const canvas = require('discord-canvas');
 const Schema = require('../models/welcomeChannel');
 
 
-
+module.exports = client => {
  client.on('guildMemberAdd', async(member) => {
 	Schema.findOne({ Guild: member.guild.id }, async(err, data) => {
 		if(!data) return;
@@ -34,12 +34,7 @@ const user = member.user;
 
 const channel = member.guild.channels.cache.get(data.Channel);
 
-
-try {
-	  await channel.send(attachment);
-	} catch (err) {
-		console.log(err);
-	}
+channel.send(attachment);
 
 });
 
@@ -47,4 +42,4 @@ try {
   
 })
 
-
+};
