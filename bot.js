@@ -12,7 +12,7 @@ const fetch = require('node-fetch');
 const { GiveawaysManager } = require('discord-giveaways');
 const PREFIX = 's#';
 const mongo = require('mongoose');
-const mongo = require('mongoose');
+
 
 const Schema = new mongo.Schema({
     Guild: String,
