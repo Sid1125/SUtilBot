@@ -42,7 +42,7 @@ channel.send(
 
 });
 
-  
+});
 
 
 client.giveawaysManager = new GiveawaysManager(client, {
