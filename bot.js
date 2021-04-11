@@ -10,7 +10,7 @@ const fs = require('fs');
 const currency = new Discord.Collection();
 const fetch = require('node-fetch');
 const { GiveawaysManager } = require('discord-giveaways');
-const PREFIX = 's#';
+const prefix = require('./models/prefix');
 const mongo = require('mongoose');
 const Schema = require('./models/welcomeChannel');
 
@@ -207,7 +207,7 @@ storedBalances.forEach(b => currency.set(b.user_id, b));
 client.user.setActivity(`s#help in ${client.guilds.cache.size} servers.`, {type: "WATCHING"});
 });
 
-const prefix = 's#'
+
 
 
 
