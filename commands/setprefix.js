@@ -1,7 +1,7 @@
 const prefixModel = require("../models/prefix")
 
 module.exports.run = async (client, message, args) => {
-    const data = await PrefixSchema.findOne({
+    const data = await prefixModel.findOne({
         GuildID: message.guild.id
     });
 
@@ -10,13 +10,13 @@ module.exports.run = async (client, message, args) => {
     if (args[0].length > 5) return message.channel.send('Your new prefix must be under \`5\` characters!')
 
     if (data) {
-        await PrefixSchema.findOneAndRemove({
+        await prefixModel.findOneAndRemove({
             GuildID: message.guild.id
         })
-        
+     
         message.channel.send(`The new prefix is now **\`${args[0]}\`**`);
 
-        let newData = new PrefixSchema({
+        let newData = new prefixModel({
             Prefix: args[0],
             GuildID: message.guild.id
         })
@@ -24,7 +24,7 @@ module.exports.run = async (client, message, args) => {
     } else if (!data) {
         message.channel.send(`The new prefix is now **\`${args[0]}\`**`);
 
-        let newData = new PrefixSchema({
+        let newData = new prefixModel({
             Prefix: args[0],
             GuildID: message.guild.id
         })

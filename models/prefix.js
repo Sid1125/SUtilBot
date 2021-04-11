@@ -1,5 +1,5 @@
 const mongo = require('mongoose');
-
+mongo.set('useFindAndModify', false);
 const PrefixSchema = new mongo.Schema({
     Prefix: {
         type: String
