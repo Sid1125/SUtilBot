@@ -8,8 +8,8 @@ module.exports.run = async(client , message , args) => {
       .setTitle('Achievement unlocked!')
       .setImage(`https://api.cool-img-api.ml/achievement?text=${sentence}`)
       .setColor('RANDOM')
-      .setFooter(' ');
+      .setFooter('Haha Nerd!!!!');
     message.channel.send(embed)
   }
 module.exports.help = {
-  name: 'mcadvancemant',}
+  name: 'mcadvancement',}
