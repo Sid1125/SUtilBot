@@ -13,6 +13,6 @@ if(!message.author.tag == '699257426712592385') return;
         .setDescription(serverlist)
         message.channel.send({embed});
   }
-modul.exports.help ={
-    name = "guilds",
+module.exports.help ={
+    name:"guilds"
 }
