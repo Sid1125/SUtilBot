@@ -36,7 +36,7 @@ channel.send(
                         .setTitle(`Welcome!, Enjoy your stay at ${member.guild.name}! `)     
                         .setImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5B73NVrODIjdj8OOsYjvBNsxpNR-gm4egBg&usqp=CAU')
                         .setColor("BLUE")
-                        .setDescription(`Glad you are here ${member}!!!!\nBe sure to check the Rules of the server!`)
+                        .setDescription(`Glad you are here ${member}!!!!\nBe sure to check the Rules of the server!\nYou are the ${member.guild.memberCount}th Member of this Server!!`)
                 )
 
 
