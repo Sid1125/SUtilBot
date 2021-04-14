@@ -4,7 +4,7 @@ const client = new Discord.Client();
 
 module.exports.run = async(client,message,args)=>{
  const voteEmbed = new Discord.MessageEmbed()
-.setDescription['Click here to Vote for me!!!!'](`https://top.gg/bot/756538469106581554/vote`)
+.setDescription[Click here to Vote for me!!!!](https://top.gg/bot/756538469106581554/vote)
     .setFooter(message.author.tag, message.author.displayAvatarURL())
 	.setColor('BLUE')
 	.setTimestamp();
