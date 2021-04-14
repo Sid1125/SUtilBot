@@ -30,6 +30,7 @@
     "opusscript": "0.0.7",
     "sequelize": "^6.3.5",
     "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master",
+    "weky": "^1.0.5",
     "ytdl-core": "^4.5.0",
     "ytdl-core-discord": "^1.2.4"
   },

@@ -49,7 +49,7 @@ module.exports.run = async (client, message, args) => {
       .setThumbnail(anime.posterImage.original)
       .setTimestamp();
 
-    message.inlineReply(embed);
+    message.reply(embed);
   },
   module.exports.help = {
     name: "anime",
