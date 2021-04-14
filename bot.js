@@ -1,10 +1,7 @@
 ﻿const Discord = require('discord.js');
 const Sequelize = require('sequelize');
 const eco = require("discord-economy");
-const client = new Client({
-    disableEveryone: true,
-    partials : ["MESSAGE", "CHANNEL", "REACTION"]
-});
+const client = new Discord.Client();
 const ytdl = require('ytdl-core');
 const { Users, CurrencyShop } = require('./dbObjects');
 const { Op } = require('sequelize');
@@ -288,6 +285,5 @@ client.on('message', async(message) => {
         });
     }
 })
-
 
 client.login(process.env.DJS_TOKEN);
