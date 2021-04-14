@@ -4,7 +4,7 @@ const client = new Discord.Client();
 
 module.exports.run = async(client,message,args)=>{
  const invEmbed = new Discord.MessageEmbed()
-.setDescription['Click here to Invte me to your server!!!!'](`https://dsc.gg/sutilbot`)
+.setDescription("[Click here to Invte me to your server!!!!](`https://dsc.gg/sutilbot`)")
     .setFooter(message.author.tag, message.author.displayAvatarURL())
 	.setColor('BLUE')
 	.setTimestamp();
