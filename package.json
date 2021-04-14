@@ -28,6 +28,7 @@
     "node-pre-gyp": "^0.17.0",
     "novelcovid": "^3.0.0",
     "opusscript": "0.0.7",
+    "reconlx": "^1.2.41",
     "sequelize": "^6.3.5",
     "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master",
     "weky": "^1.0.5",
