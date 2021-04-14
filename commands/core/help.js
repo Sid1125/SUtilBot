@@ -21,7 +21,7 @@ module.exports = {
 						{ name: 'Roleplay (no prefix)', value: '`lets fight`, `no u`, `ghostbot`, `so what`' },
 			    { name: 'Image', value: '`av`, `delete`, `jail`, `trigger`, `hitler`, `wanted`' },
 			    { name: 'Moderation', value: '`ban`, `kick`, `nuke`' },
-                { name: 'Fun', value: '`mcadvancement`, `meme`, `minecraft`, `anime`, `fight`' },
+                { name: 'Fun', value: '`mcadvancement`, `meme`, `minecraft`, `hangman`, `anime`, `fight`' },
 			    { name: 'Giveaway - Do s#startgive #channel duration winner_count prize', value: '`startgive`, `endgiveaway`, `rgiveaway(r = reroll)`' },
                         { name: 'Music(CAUTION - only do s#play song name[no links])', value: music },
                         { name: 'Filters', value: '`bassboost`, `8D`, `vaporwave`, `nightcore`, `phaser`, `tremolo`, `vibrato`, `reverse`, `treble`, `normalizer`, `surrounding`, `pulsator`, `subboost`, `karaoke`, `flanger`, `gate`, `haas`, `mcompand`' },
