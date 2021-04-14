@@ -16,7 +16,7 @@ module.exports = {
                     
                     
                     fields: [
-                        { name: 'Bot', value: '`debug`, `ping`, `covid`, `swc(set a welcome channel)`, `cwc(check welcome channel)`' },
+                        { name: 'Bot', value: '`debug`, `ping`, `invite`, `vote`, `covid`, `swc(set a welcome channel)`, `cwc(check welcome channel)`' },
 						{ name: 'No prefix', value: '`dream`, `technoblade`, `wilbursoot`, `bbs`, `rasode me kon tha`, `drista`, `RIP`' },
 						{ name: 'Roleplay (no prefix)', value: '`lets fight`, `no u`, `ghostbot`, `so what`' },
 			    { name: 'Image', value: '`av`, `delete`, `jail`, `trigger`, `hitler`, `wanted`' },
