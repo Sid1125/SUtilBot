@@ -14,6 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
+    "@freezegold/anime.js": "^2.0.5-beta",
     "canvacord": "^5.1.0",
     "discord-canvas": "^1.4.1",
     "discord-economy": "^1.2.2",
