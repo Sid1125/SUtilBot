@@ -2,17 +2,20 @@ const { hangman } = require("reconlx");
 
 module.exports.run = async(client,message,args)=>{
 
-// making hangman
-const hang = new hangman({
-    message: message,
-    word: args.slice(1).join(" "),
-    client: client,
-    channelID: message.mentions.channels.first(),
-});
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('You need manage messages permission.')
+    const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
+    if(!channel) return message.channel.send('Please specify a channel')
+    const word = args.slice(1).join(" ")
+    if(!word) return  message.channel.send('Please specify a word to guess.')
 
-// starting the game
-hang.start();
+    const hang = new hangman({
+        message: message,
+        word: word,
+        client: client,
+        channelID: channel.id,
+    })
 
+    hang.start();
 }
 
 module.exports.help ={
