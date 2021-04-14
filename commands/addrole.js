@@ -15,6 +15,6 @@ const { Message } = require('discord.js')
         await target.roles.add(role) // adding the role to the user
         message.channel.send(`${target.user.username} has obtained a role`)
     }
-    module.exports = {
+    module.exports.help = {
         name : 'addrole',
     }
