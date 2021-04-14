@@ -23,6 +23,7 @@
     "discord.js": "^12.2.0",
     "ffmpeg-static": "^4.2.7",
     "got": "^11.8.2",
+    "images-scraper": "^6.3.0",
     "mongoose": "^5.12.3",
     "node-fetch": "^2.6.1",
     "node-pre-gyp": "^0.17.0",
