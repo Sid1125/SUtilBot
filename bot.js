@@ -43,7 +43,22 @@ channel.send(
 });
 
 });
+const alexa = require('alexa-bot-api')
+const ai = new alexa();
+client.on('message', async (message) => {
+    const channelID = '831797823325863937'
+    const channel = message.guild.channels.cache.get(channelID);
+    if (message.channel.id === channelID) {
+        if (message.author.bot) return;
+        let content = message.content
+        ai.getReply(content).then(async reply => {
+            await channel.send(reply)
+            await console.log(reply)
+        })
+    }
 
+
+})
 
 client.giveawaysManager = new GiveawaysManager(client, {
     storage: "./giveaways.json",
