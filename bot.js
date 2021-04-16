@@ -47,8 +47,8 @@ const alexa = require('alexa-bot-api')
 const ai = new alexa();
 client.on('message', async (message) => {
     const channelID = '831797823325863937'
-    const channel = message.guild.channels.cache.get(channelID);
-	.catch(error => message.channel.send(`There is an error :-\n${error}`))
+    const channel = message.guild.channels.cache.get(channelID)
+	.catch(error => message.channel.send(`There is an error :-\n${error}`));
     if (message.channel.id === channelID) {
         if (message.author.bot) return;
         let content = message.content
