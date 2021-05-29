@@ -1,19 +1,17 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const discord_button = require('discord-buttons');
 
-
-module.exports.run = async(client,message,args)=>{
- const voteEmbed = new Discord.MessageEmbed()
-.setDescription('[Top.gg](https://top.gg/bot/756538469106581554)')
-    .setFooter(message.author.tag, message.author.displayAvatarURL())
-	.setColor('BLUE')
-	.setTimestamp();
-  try {
-	  await message.channel.send(voteEmbed);
-	} catch (err) {
-		console.log(err);
-		message.channel.send("I am not able to say that message!!");
-	}
+module.exports.run = async(client,Message,args)=>{
+	
+	let button = new discord_button.MessageButton()
+	  .setStyle('url') //default: blurple
+	  .setLabel('Vote on Top.gg') //default: NO_LABEL_PROVIDED
+	  .setID('Vote')
+	  .setURL('https://top.gg/bot/756538469106581554');
+	
+	Message.channel.send('Vote for me on Top.gg', button);
+	
 }
 
 module.exports.help ={
