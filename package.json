@@ -38,7 +38,7 @@
     "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master",
     "util": "^0.12.3",
     "weky": "^1.0.5",
-    "ytdl-core": "^4.5.0",
+    "ytdl-core": "^4.8.2",
     "ytdl-core-discord": "^1.2.4"
   },
   "homepage": "",
