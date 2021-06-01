@@ -27,7 +27,7 @@ module.exports = {
                         { name: 'Filters', value: '`bassboost`, `8D`, `vaporwave`, `nightcore`, `phaser`, `tremolo`, `vibrato`, `reverse`, `treble`, `normalizer`, `surrounding`, `pulsator`, `subboost`, `karaoke`, `flanger`, `gate`, `haas`, `mcompand`' },
                     ],
                     timestamp: new Date(),
-                    description: `To use filters, ${client.config.prefix}filter (the filter). Example : ${client.config.prefix}filter 8D.\n\nhttps://youtu.be/mERQB-MrDsc - bot usage`,
+                    description: `To use filters, ${client.config.prefix}filter (the filter). Example : ${client.config.prefix}filter 8D.\n\n[Bot usage](https://youtu.be/mERQB-MrDsc)\n[Invite Me!](https://dsc.gg/sutilbot)\n[Join our Server!](https://dsc.gg/sutilbotserver)\n[Vote for me on Top.gg](https://top.gg/bot/756538469106581554)`,
                 },
             });
         } else {
