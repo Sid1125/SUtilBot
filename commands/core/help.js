@@ -21,6 +21,7 @@ module.exports = {
 						{ name: 'Roleplay (no prefix)', value: '`lets fight`, `no u`, `ghostbot`, `so what`' },
 			            { name: 'Image', value: '`av`, `delete`, `jail`, `trigger`, `hitler`, `wanted`' },
 			            { name: 'Moderation', value: '`ban`, `kick`, `nuke`, `addrole`, `removerole`' },
+ { name: 'Cryptocurrency', value: '`cryptoprice name_of_crypto currency(usd,inr,eur,etc.)`, `cryptonews`' },
                         { name: 'Fun', value: '`mcadvancement`, `meme`, `minecraft`, `hangman`, `anime`, `fight`' },
 			            { name: 'Giveaway - Do s#startgive #channel duration winner_count prize', value: '`startgive`, `endgiveaway`, `rgiveaway(r = reroll)`' },
                         { name: 'Music(CAUTION - only do s#play song name[no links])', value: music },
