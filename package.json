@@ -16,7 +16,7 @@
     "@discordjs/opus": "^0.3.2",
     "@freezegold/anime.js": "^2.0.5-beta",
     "alexa-bot-api": "^0.2.1",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "canvacord": "^5.1.0",
     "discord-buttons": "^2.4.1",
     "discord-canvas": "^1.4.1",
