@@ -19,7 +19,7 @@ client.on('interactionCreate', async interaction => {
 
 		await interaction.reply({ content: 'Bot Invite!', ephemeral: true, embeds: [embed], components: [row] });
 })
-});
+};
 
 
 }
