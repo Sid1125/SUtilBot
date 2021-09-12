@@ -22,7 +22,7 @@ client.on('interactionCreate', async interaction => {
 };
 
 
-}
+
 module.exports.help ={
     name:"invite"
 }
