@@ -5,22 +5,10 @@ const discord_button = require('discord-buttons');
 
 module.exports.run = async(client,Message,args)=>{
 	
-	let button = new discord_button.MessageButton()
-	  .setStyle('url') //default: blurple
-	  .setLabel('Vote on Top.gg') //default: NO_LABEL_PROVIDED
-	  .setID('Vote')
-	  .setURL('https://top.gg/bot/756538469106581554');
-	
-	Message.channel.send('Vote for me on Top.gg', button);
+
 	
 client.on('interactionCreate', async interaction => {
-	if (!interaction.isCommand()) return;
 
-	if (interaction.commandName === 'vote') {
-		const row = new MessageActionRow()
-			.addComponents(
-				// ...
-			);
 
 		const embed = new MessageEmbed()
 			.setColor('#0099ff')

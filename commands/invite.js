@@ -9,13 +9,7 @@ module.exports.run = async(client,message,args)=>{
 const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 
 client.on('interactionCreate', async interaction => {
-	if (!interaction.isCommand()) return;
 
-	if (interaction.commandName === 'invite') {
-		const row = new MessageActionRow()
-			.addComponents(
-				// ...
-			);
 
 		const embed = new MessageEmbed()
 			.setColor('#0099ff')
