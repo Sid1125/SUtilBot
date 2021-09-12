@@ -11,7 +11,7 @@ const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
 
-	if (interaction.commandName === 'ping') {
+	if (interaction.commandName === 'invite') {
 		const row = new MessageActionRow()
 			.addComponents(
 				// ...

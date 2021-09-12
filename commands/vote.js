@@ -13,6 +13,25 @@ module.exports.run = async(client,Message,args)=>{
 	
 	Message.channel.send('Vote for me on Top.gg', button);
 	
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
+
+	if (interaction.commandName === 'vote') {
+		const row = new MessageActionRow()
+			.addComponents(
+				// ...
+			);
+
+		const embed = new MessageEmbed()
+			.setColor('#0099ff')
+			.setTitle('Vote me on top.gg!!')
+			.setURL('https://top.gg/bot/756538469106581554')
+			.setDescription('Vote me !!');
+
+		await interaction.reply({ content: 'Vote me on top.gg!', ephemeral: true, embeds: [embed], components: [row] });
+	}
+});	
+	
 }
 
 module.exports.help ={
