@@ -1,4 +1,7 @@
-const { Discord, Client, MessageEmbed } = require('discord.js') 
+
+const { Client, Intents, MessageEmbed, Discord } = require('discord.js');
+
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 module.exports.run = async(client, message, args) =>{
    let serverlist = ''
 
