@@ -3,8 +3,8 @@ const Discord = require('discord.js');
 const { Client, Intents } = require('discord.js');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
-const disbut = require('discord-buttons')(client);
-
+const disbut = require('discord-buttons');
+disbut(client);
 module.exports.run = async(client,message,args)=>{
 
 
