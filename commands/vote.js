@@ -1,14 +1,14 @@
 const Discord = require('discord.js');
 const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
-const discord_button = require('discord-buttons');
+
 
 module.exports.run = async(client,Message,args)=>{
 	
 
 	
 client.on('interactionCreate', async interaction => {
-
+const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 
 		const embed = new MessageEmbed()
 			.setColor('#0099ff')
