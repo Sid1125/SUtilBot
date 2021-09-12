@@ -18,7 +18,7 @@ client.on('interactionCreate', async interaction => {
 			.setDescription('Invite me !!');
 
 		await interaction.reply({ content: 'Bot Invite!', ephemeral: true, embeds: [embed], components: [row] });
-}}
+})
 });
 
 

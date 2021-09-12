@@ -17,7 +17,7 @@ client.on('interactionCreate', async interaction => {
 			.setDescription('Vote me !!');
 
 		await interaction.reply({ content: 'Vote me on top.gg!', ephemeral: true, embeds: [embed], components: [row] });
-	}
+	
 });	
 	
 }
