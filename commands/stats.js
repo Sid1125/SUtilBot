@@ -5,7 +5,7 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 module.exports.run = async(client,message,args)=>{
 const statsEmbed = new Discord.MessageEmbed()
     .setTitle(`Bot Stats`)
- .setDescription(`Server count: ${client.guilds.cache.size}\nPing: **${client.ws.ping}ms**\nRobot connected in **${client.voice.connections.size}** channels !\nUser Count: ${client.users.cache.size}`)
+ .setDescription(`Server count: ${client.guilds.cache.size}\nPing: **${client.ws.ping}ms**\nUser Count: ${client.users.cache.size}`)
     .setColor('BLUE')
     .setTimestamp();
 
