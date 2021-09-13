@@ -72,42 +72,42 @@ client.giveawaysManager.on("giveawayEnded", (giveaway, winners) => {
 
 });
 
-client.on("message", (message) => { if (message.content == "dream") { message.channel.send("In this video 3 of my friends try and hunt me down! If I kill the Ender Dragon I win but if they kill me once I lose. \nThis is Minecraft Manhunt. \nAlso, only a small percentage of people who watch my videos are subscribed, so make sure you subscribe. This really helps me out a lot! So, let's get straight into the video! \n\n(_Dream Minecraft Manhunt music starts playing!_) \n\n(_Dream killed the Ender Dragon and won!!_)"); } });
-client.on("message", (message) => { if (message.content == "technoblade") { message.channel.send("Hail TECHNOBLADE!!!! \n\nTECHNOBLADE NEVER DIES"); } });
-client.on("message", (message) => { if (message.content == "wilbursoot") { message.channel.send("2 to the 1 to the 1 to the 3 Please get TommyInnit off my screen!!"); } });
-client.on("message", (message) => { if (message.content == "bbs") { message.channel.send("Hey Fellas Beast boy here!"); } });
-client.on("message", (message) => { if (message.content == "rasode me kon tha?") { message.channel.send("Rashi Ben"); } });
-client.on("message", (message) => { if (message.content == "drista") { message.channel.send("Tommy I need help Dream hit me! Help me TommyInnit!"); } });
-client.on("message", (message) => { if (message.content == "lets fight") { message.reply("I am gonna kill you!"); } });
-client.on("message", (message) => { if (message.content == "no u") { message.channel.send("Aaaah, You killed me. \nYou won't live a peaceful life!"); } });
-client.on("message", (message) => { if (message.content == "ghostbot") { message.channel.send("Boooooo! I am the ghost of the client you killed!"); } });
-client.on("message", (message) => { if (message.content == "so what") { message.channel.send("You know what? I won't fight you! \nYou are just a waste of time! \nBYE"); } });
-client.on("message", (message) => { if (message.content == "RIP") { message.channel.send("let's keep silence of 2 minutes for Our Loved friend!!"); } });
-client.on("message", (message) => { if (message.content == "fuck") {message.delete();
+client.on("messageCreate", (message) => { if (message.content == "dream") { message.channel.send("In this video 3 of my friends try and hunt me down! If I kill the Ender Dragon I win but if they kill me once I lose. \nThis is Minecraft Manhunt. \nAlso, only a small percentage of people who watch my videos are subscribed, so make sure you subscribe. This really helps me out a lot! So, let's get straight into the video! \n\n(_Dream Minecraft Manhunt music starts playing!_) \n\n(_Dream killed the Ender Dragon and won!!_)"); } });
+client.on("messageCreate", (message) => { if (message.content == "technoblade") { message.channel.send("Hail TECHNOBLADE!!!! \n\nTECHNOBLADE NEVER DIES"); } });
+client.on("messageCreate", (message) => { if (message.content == "wilbursoot") { message.channel.send("2 to the 1 to the 1 to the 3 Please get TommyInnit off my screen!!"); } });
+client.on("messageCreate", (message) => { if (message.content == "bbs") { message.channel.send("Hey Fellas Beast boy here!"); } });
+client.on("messageCreate", (message) => { if (message.content == "rasode me kon tha?") { message.channel.send("Rashi Ben"); } });
+client.on("messageCreate", (message) => { if (message.content == "drista") { message.channel.send("Tommy I need help Dream hit me! Help me TommyInnit!"); } });
+client.on("messageCreate", (message) => { if (message.content == "lets fight") { message.reply("I am gonna kill you!"); } });
+client.on("messageCreate", (message) => { if (message.content == "no u") { message.channel.send("Aaaah, You killed me. \nYou won't live a peaceful life!"); } });
+client.on("messageCreate", (message) => { if (message.content == "ghostbot") { message.channel.send("Boooooo! I am the ghost of the client you killed!"); } });
+client.on("messageCreate", (message) => { if (message.content == "so what") { message.channel.send("You know what? I won't fight you! \nYou are just a waste of time! \nBYE"); } });
+client.on("messageCreate", (message) => { if (message.content == "RIP") { message.channel.send("let's keep silence of 2 minutes for Our Loved friend!!"); } });
+client.on("messageCreate", (message) => { if (message.content == "fuck") {message.delete();
 message.reply ("No bad Words allowed!"); } });
-client.on("message", (message) => { if (message.content == "Fuck") {message.delete();
+client.on("messageCreate", (message) => { if (message.content == "Fuck") {message.delete();
 message.reply ("No bad Words allowed!"); } });
-client.on("message", (message) => { if (message.content == "Saale") {message.delete();
+client.on("messageCreate", (message) => { if (message.content == "Saale") {message.delete();
 message.reply ("No bad Words allowed!"); } });
-client.on("message", (message) => { if (message.content == "Kutte") {message.delete();
+client.on("messageCreate", (message) => { if (message.content == "Kutte") {message.delete();
 message.reply ("No bad Words allowed!"); } });
-client.on("message", (message) => { if (message.content == "Bitch") {message.delete();
+client.on("messageCreate", (message) => { if (message.content == "Bitch") {message.delete();
 message.reply ("No bad Words allowed!"); } });
-client.on("message", (message) => { if (message.content == "FUCK") {message.delete();
+client.on("messageCreate", (message) => { if (message.content == "FUCK") {message.delete();
 message.reply ("No bad Words allowed!"); } });
-client.on("message", (message) => { if (message.content == "fUcK") {message.delete();
+client.on("messageCreate", (message) => { if (message.content == "fUcK") {message.delete();
 message.reply ("No bad Words allowed!"); } });
-client.on("message", (message) => { if (message.content == "FuCk") {message.delete();
+client.on("messageCreate", (message) => { if (message.content == "FuCk") {message.delete();
 message.reply ("No bad Words allowed!"); } });
-client.on("message", (message) => { if (message.content == "FUck") {message.delete();
+client.on("messageCreate", (message) => { if (message.content == "FUck") {message.delete();
 message.reply ("No bad Words allowed!"); } });
-client.on("message", (message) => { if (message.content == "fuCK") {message.delete();
+client.on("messageCreate", (message) => { if (message.content == "fuCK") {message.delete();
 message.reply ("No bad Words allowed!"); } });
-client.on("message", (message) => { if (message.content == "kutte") {message.delete();
+client.on("messageCreate", (message) => { if (message.content == "kutte") {message.delete();
 message.reply ("No bad Words allowed!"); } });
-client.on("message", (message) => { if (message.content == "saale") {message.delete();
+client.on("messageCreate", (message) => { if (message.content == "saale") {message.delete();
 message.reply ("No bad Words allowed!"); } });
-client.on("message", (message) => { if (message.content == "bitch") {message.delete();
+client.on("messageCreate", (message) => { if (message.content == "bitch") {message.delete();
 message.reply ("No bad Words allowed!"); } });
 
 
@@ -139,7 +139,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 	
   });
-  client.on("message", async message => {
+  client.on("messageCreate", async message => {
     if(message.author.client) return;
     if(message.channel.type === "dm") return;
 
