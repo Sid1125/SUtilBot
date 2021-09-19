@@ -16,7 +16,7 @@ const prefix = 's#';
 const mongo = require('mongoose');
 const Schema = require('./models/welcomeChannel');
 
-mongo.connect('mongodb+srv://SUtilBotUser:ssinha@1125@sutilbot-beta.2ecbj.mongodb.net/Data', {useNewUrlParser: true, useUnifiedTopology: true})
+mongo.connect('', {useNewUrlParser: true, useUnifiedTopology: true})
 
 const config = require('./config.json');
 client.config = config;
