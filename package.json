@@ -7,14 +7,12 @@
     "url": ""
   },
   "engines": {
-    "node": "16.9.0",
-    "npm": "7.21.1"
+    "node": "16.11.1",
+    "npm": "8.1.2"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@discordjs/opus": "^0.3.2",
-    "@freezegold/anime.js": "^2.0.5-beta",
     "@mapbox/node-pre-gyp": "^1.0.5",
     "alexa-bot-api": "^0.2.1",
     "axios": "^0.21.4",
@@ -23,7 +21,7 @@
     "discord-canvas": "^1.4.1",
     "discord-economy": "^1.2.2",
     "discord-giveaways": "^4.4.3",
-    "discord-player": "^3.0.3",
+    "discord-player": "^1.4.1",
     "discord.js": "^13.0.0",
     "ffmpeg-static": "^4.2.7",
     "figlet": "^1.5.0",
@@ -43,10 +41,12 @@
     "util": "^0.12.3",
     "weky": "^1.0.5",
     "ytdl-core": "^4.9.1",
-    "ytdl-core-discord": "^1.2.4"
+    "ytdl-core-discord": "^1.1.0"
   },
   "homepage": "",
   "scripts": {
     "test": "s#help"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }

@@ -1,12 +1,12 @@
 ﻿const Discord = require('discord.js');
-const Sequelize = require('sequelize');
-const eco = require("discord-economy");
+
+
 const { Client, Intents } = require('discord.js');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const ytdl = require('ytdl-core');
-const { Users, CurrencyShop } = require('./dbObjects');
-const { Op } = require('sequelize');
+
+
 const { Player } = require('discord-player');
 const fs = require('fs');
 const currency = new Discord.Collection();
@@ -192,20 +192,10 @@ for (const file of player) {
     client.player.on(file.split(".")[0], event.bind(null, client));
 };
 
-Reflect.defineProperty(currency, 'getBalance', {
-	/* eslint-disable-next-line func-name-matching */
-	value: function getBalance(id) {
-		const user = currency.get(id);
-		return user ? user.balance : 0;
-	},
-});
-
 
 
 client.once('ready', async () => {
-	const storedBalances = await Users.findAll();
-storedBalances.forEach(b => currency.set(b.user_id, b));
-	console.log(`Logged in as ${client.user.tag}!`);
+		console.log(`Logged in as ${client.user.tag}!`);
 client.user.setActivity(`s#help in ${client.guilds.cache.size} servers.`, {type: "WATCHING"});
 });
 
@@ -219,4 +209,4 @@ client.once('ready', () => {
 });
 
 
-client.login(process.env.DJS_TOKEN);
+client.login('NzU2NTM4NDY5MTA2NTgxNTU0.X2TTWg.Px1b5Cj2qQqQRSmwkTuKPiAcqsg');
