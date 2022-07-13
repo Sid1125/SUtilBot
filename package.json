@@ -33,7 +33,6 @@
     "node-fetch": "^2.6.1",
     "node-pre-gyp": "^0.17.0",
     "novelcovid": "^3.0.0",
-    "opusscript": "0.0.7",
     "reconlx": "^2.4.3",
     "sequelize": "^6.6.5",
     "sequelize-pool": "^7.1.0",
