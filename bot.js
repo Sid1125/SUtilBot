@@ -3,7 +3,7 @@
 
 const { Client, Intents } = require('discord.js');
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.GUILD_VOICE_STATES] });
 const ytdl = require('ytdl-core');
 
 
@@ -154,9 +154,7 @@ function phrase(message) {
 };
 
 
-const client = new Discord.Client({
-    intents: ["GUILD_VOICE_STATES", ...someOtherIntents]
-});
+
 client.emotes = require('./config/emojis.json');
 client.filters = require('./config/filters.json');
 client.commands = new Discord.Collection();
