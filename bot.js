@@ -154,7 +154,9 @@ function phrase(message) {
 };
 
 
-client.player = new Player(client);
+const client = new Discord.Client({
+    intents: ["GUILD_VOICE_STATES", ...someOtherIntents]
+});
 client.emotes = require('./config/emojis.json');
 client.filters = require('./config/filters.json');
 client.commands = new Discord.Collection();
