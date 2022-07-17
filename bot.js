@@ -254,4 +254,4 @@ client.once('ready', () => {
 });
 
 
-client.login(DJS_TOKEN);
+client.login(process.env.DJS_TOKEN);
