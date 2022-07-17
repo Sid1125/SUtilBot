@@ -254,4 +254,4 @@ client.once('ready', () => {
 });
 
 
-client.login('NzU2NTM4NDY5MTA2NTgxNTU0.X2TTWg.Px1b5Cj2qQqQRSmwkTuKPiAcqsg');
+client.login(DJS_TOKEN);
