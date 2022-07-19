@@ -5,12 +5,12 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds,
 
 module.exports.run = async(client,message,args)=>{
   let ad = message.mentions.users.first() ;
-  if(!ad) return message.reply(`User Not Specified !`)
+  if(!ad) return message.reply({content: `User Not Specified !`})
 
   let avatar = ad.displayAvatarURL({ dynamic: true, format: 'png', });
   let attachment = new Discord.MessageAttachment(avatar);
     message.channel.send(attachment)
-    message.channel.send("You look Cool Man!!")
+    message.channel.send({content: "You look Cool Man!!"})
 }
 
 module.exports.help ={
