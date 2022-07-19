@@ -1,9 +1,9 @@
 
 const { fight } = require('weky')
-const Discord = require('discord.js');
-const { Client, Intents } = require('discord.js');
+const { Discord, Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
+const client = new Client({ intents: [GatewayIntentBits.Guilds,
+  GatewayIntentBits.GuildMessages] })
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 module.exports.run =async (client, message, args) => {
 
     if(!message.mentions.users.first())return message.reply('Ping someone please!!')

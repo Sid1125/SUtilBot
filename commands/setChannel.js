@@ -1,6 +1,6 @@
-const Discord = require('discord.js');
-const { Client, Intents } = require('discord.js');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+const { Discord, Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
+const client = new Client({ intents: [GatewayIntentBits.Guilds,
+  GatewayIntentBits.GuildMessages] })
 const Schema = require('../models/welcomeChannel');
 
 module.exports.run = async(client,message,args)=>{

@@ -1,6 +1,6 @@
-const Discord = require('discord.js');
-const { Client, Intents } = require('discord.js');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+const { Discord, Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
+const client = new Client({ intents: [GatewayIntentBits.Guilds,
+  GatewayIntentBits.GuildMessages] })
 
 module.exports.run = async(client,message,args)=>{
 const statsEmbed = new Discord.MessageEmbed()
@@ -10,7 +10,7 @@ const statsEmbed = new Discord.MessageEmbed()
     .setTimestamp();
 
 try {
-	  await message.channel.send(statsEmbed);
+	  await message.channel.send({embeds: [statsEmbed]});
 	} catch (err) {
 		console.log(err);
 		message.channel.send("I am not able to show the number of servers the bot is in!!");

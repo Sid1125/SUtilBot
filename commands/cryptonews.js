@@ -1,7 +1,9 @@
 const axios = require('axios');
-const { Client, Intents, Message, MessageEmbed } = require('discord.js');
+const {Message, MessageEmbed } = require('discord.js');
+const { Discord, Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
+const client = new Client({ intents: [GatewayIntentBits.Guilds,
+  GatewayIntentBits.GuildMessages] })
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 
  

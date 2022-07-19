@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
-const Discord = require('discord.js');
+const { Discord, Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
+const client = new Client({ intents: [GatewayIntentBits.Guilds,
+  GatewayIntentBits.GuildMessages] })
 
 module.exports.run = async (client, message, args, utils) => {
 	const pronouns = ['silly', 'mommy', 'dad', 'mom', 'master', 'nii-san', 'onee-san', 'love', 'ma\'am', 'sir', 'friend', 'b-baka', 'honey'];
@@ -12,7 +14,7 @@ module.exports.run = async (client, message, args, utils) => {
 		.setColor('RANDOM')
 		.setTitle(question)
 		.setDescription(`${randompronoun}, ${randomanswer}`);
-	message.channel.send(embed);
+	message.channel.send({embeds:[embed]});
 };
 
 
