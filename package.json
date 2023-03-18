@@ -14,7 +14,6 @@
   "license": "MIT",
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
-    "@freezegold/anime.js": "^2.0.5-beta",
     "alexa-bot-api": "^0.2.1",
     "axios": "^0.21.1",
     "canvacord": "^5.1.0",
