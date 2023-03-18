@@ -1,23 +1,16 @@
-const { Discord, Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
-const client = new Client({ intents: [GatewayIntentBits.Guilds,
-  GatewayIntentBits.GuildMessages] })
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const discord_button = require('discord-buttons');
 
 module.exports.run = async(client,Message,args)=>{
 	
-
+	let button = new discord_button.MessageButton()
+	  .setStyle('url') //default: blurple
+	  .setLabel('Vote on Top.gg') //default: NO_LABEL_PROVIDED
+	  .setID('Vote')
+	  .setURL('https://top.gg/bot/756538469106581554');
 	
-client.on('interactionCreate', async interaction => {
-const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
-
-		const embed = new MessageEmbed()
-			.setColor('#0099ff')
-			.setTitle('Vote me on top.gg!!')
-			.setURL('https://top.gg/bot/756538469106581554')
-			.setDescription('Vote me !!');
-
-		await interaction.reply({ content: 'Vote me on top.gg!', ephemeral: true, embeds: [embed], components: [row] });
-	
-});	
+	Message.channel.send('Vote for me on Top.gg', button);
 	
 }
 

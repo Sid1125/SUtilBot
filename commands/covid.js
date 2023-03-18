@@ -1,8 +1,6 @@
-const { Discord, Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
-const client = new Client({ intents: [GatewayIntentBits.Guilds,
-  GatewayIntentBits.GuildMessages] })
+const Discord = require('discord.js');
+const client = new Discord.Client();
 const covid = require('novelcovid')
-
 
 
 

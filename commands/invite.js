@@ -1,26 +1,30 @@
-const { Discord, Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
-const client = new Client({ intents: [GatewayIntentBits.Guilds,
-  GatewayIntentBits.GuildMessages] })
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const disbut = require('discord-buttons')(client);
+
 module.exports.run = async(client,message,args)=>{
 
 
-const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 
-client.on('interactionCreate', async interaction => {
+let button2 = new disbut.MessageButton()
+  .setStyle('url') //default: blurple
+  .setLabel('Bot Invite') //default: NO_LABEL_PROVIDED
+  .setID('Inv')
+  .setURL('https://dsc.gg/sutilbot')
 
+let button = new disbut.MessageButton()
+  .setStyle('url') //default: blurple
+  .setLabel('Server Invite') //default: NO_LABEL_PROVIDED
+  .setID('Inv')
+  .setURL('https://dsc.gg/sutilbotserver')
 
-		const embed = new MessageEmbed()
-			.setColor('#0099ff')
-			.setTitle('Bot Invite')
-			.setURL('https://dsc.gg/sutilbot')
-			.setDescription('Invite me !!');
+message.channel.send('Hey, Invite me to your server!!!!\nAlso check out my server!!', {
+  buttons: [
+    button2, button
+  ]
+});
 
-		await interaction.reply({ content: 'Bot Invite!', ephemeral: true, embeds: [embed], components: [row] });
-})
-};
-
-
-
+}
 module.exports.help ={
     name:"invite"
 }

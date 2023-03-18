@@ -1,8 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const { add } = require('mathjs');
-const { Discord, Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
-const client = new Client({ intents: [GatewayIntentBits.Guilds,
-  GatewayIntentBits.GuildMessages] })
+
 module.exports.run = async(client,message,args)=>{
 let warnPermErr = new MessageEmbed()
         .setTitle("**User Permission Error!**")

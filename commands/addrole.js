@@ -1,8 +1,6 @@
 const { Message } = require('discord.js')
 
-const { Discord, Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
-const client = new Client({ intents: [GatewayIntentBits.Guilds,
-  GatewayIntentBits.GuildMessages] })
+
     module,exports.run = async(client, message, args) => {
        
         //so firstly we will check whether the author of the message has permissions

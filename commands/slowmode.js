@@ -1,6 +1,5 @@
-const { Discord, Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
-const client = new Client({ intents: [GatewayIntentBits.Guilds,
-  GatewayIntentBits.GuildMessages] })
+const { Client, Message, MessageEmbed} = require('discord.js');
+
 module.exports.run = async(client,message,args)=>{
     
 if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('You do not have permission!')

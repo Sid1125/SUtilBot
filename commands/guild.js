@@ -1,8 +1,4 @@
-
-const {MessageEmbed} = require('discord.js');
-const { Discord, Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
-const client = new Client({ intents: [GatewayIntentBits.Guilds,
-  GatewayIntentBits.GuildMessages] })
+const { Discord, Client, MessageEmbed } = require('discord.js') 
 module.exports.run = async(client, message, args) =>{
    let serverlist = ''
 

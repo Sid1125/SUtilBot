@@ -7,45 +7,44 @@
     "url": ""
   },
   "engines": {
-    "node": "16.11.1",
-    "npm": "8.1.2"
+    "node": "14.15.4",
+    "npm": "6.14.10"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@mapbox/node-pre-gyp": "^1.0.5",
+    "@discordjs/opus": "^0.3.2",
+    "@freezegold/anime.js": "^2.0.5-beta",
     "alexa-bot-api": "^0.2.1",
-    "axios": "^0.21.4",
+    "axios": "^0.21.1",
     "canvacord": "^5.1.0",
     "discord-buttons": "^2.4.1",
     "discord-canvas": "^1.4.1",
     "discord-economy": "^1.2.2",
     "discord-giveaways": "^4.4.3",
-    "discord-player": "^5.2.2",
-    "discord.js": "^14.0.2",
+    "discord-player": "^3.0.3",
+    "discord.js": "^12.2.0",
     "ffmpeg-static": "^4.2.7",
     "figlet": "^1.5.0",
     "got": "^11.8.2",
     "images-scraper": "^6.3.0",
     "mathjs": "^9.3.2",
-    "moment": "^2.29.4",
     "mongoose": "^5.12.3",
-    "mpath": "^0.8.4",
     "node-fetch": "^2.6.1",
     "node-pre-gyp": "^0.17.0",
     "novelcovid": "^3.0.0",
-    "reconlx": "^2.4.3",
-    "sequelize": "^6.6.5",
-    "sequelize-pool": "^7.1.0",
+    "opusscript": "0.0.7",
+    "reconlx": "^1.2.41",
+    "sequelize": "^6.3.5",
     "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master",
     "util": "^0.12.3",
     "weky": "^1.0.5",
-    "ytdl-core": "^4.9.1",
-    "ytdl-core-discord": "^1.1.0"
+    "ytdl-core": "^4.8.2",
+    "ytdl-core-discord": "^1.2.4"
   },
   "homepage": "",
+  "devDependencies": {},
   "scripts": {
     "test": "s#help"
-  },
-  "description": ""
+  }
 }
