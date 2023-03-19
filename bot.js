@@ -1,4 +1,4 @@
-const { Client, intents, Collection, GatewayIntentBits, Partials, interactionCreate } = require('discord.js');
+const { Client, intents, Collection, GatewayIntentBits, Partials, interactionCreate, ActivityType } = require('discord.js');
 const { createAudioPlayer, createAudioResource, joinVoiceChannel, NoSubscriberBehavior, StreamType } = require('@discordjs/voice');
 const { EmbedBuilder } = require('discord.js');
 const ytdl = require('ytdl-core');
@@ -38,6 +38,10 @@ const client = new Client({
   
   client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
+      client.user.setPresence({
+      activities: [{ name: `!help in ${client.guilds.cache.size} servers`, type: ActivityType.Listening }],
+      status: 'online',
+    });
   });
   
   client.on('interactionCreate', async interaction => {
