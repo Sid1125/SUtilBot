@@ -1,5 +1,5 @@
 {
-    "prefix": "s#",
+    "prefix": "!",
     "everyoneMention": true,
-    "hostedBy": true
+    "hostedBy": true   
 }

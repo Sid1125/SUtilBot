@@ -1,25 +1,26 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+// Import the necessary Discord.js classes
+const { EmbedBuilder } = require('discord.js');
 
+// Define the command
+module.exports = {
+  name: 'say',
+  description: 'Repeats the user\'s message.',
+  usage: '<message>',
+  execute(message, args) {
+    // Check if the user provided a message to repeat
+    if (!args.length) {
+      return message.reply('Please provide a message to repeat!');
+    }
 
-module.exports.run = async(client,message,args)=>{
-  	message.delete();
-	const messageToSay = args.join(" ");
-  const sayEmbed = new Discord.MessageEmbed()
-    .setTitle(`${message.author.tag} said: `)
-.setDescription(`${messageToSay}`)
-    .setFooter(message.author.tag, message.author.displayAvatarURL())
-	.setColor('BLUE')
-	.setTimestamp();
-  try {
-	  await message.channel.send(sayEmbed);
-	} catch (err) {
-		console.log(err);
-		message.channel.send("I am not able to say that message!!");
-	}
-      
-}
+    // Join the message arguments into a single string
+    const messageContent = args.join(' ');
 
-module.exports.help ={
-    name:"say"
-}
+    // Create an embed with the repeated message and user information
+    const embed = new EmbedBuilder()
+      .setColor('#1ad0f6')
+      .setDescription(`${message.author} says: ${messageContent}`);
+
+    // Send the embed
+    message.channel.send({ embeds: [embed] });
+  },
+};

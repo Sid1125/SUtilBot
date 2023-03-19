@@ -1,17 +1,15 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const { EmbedBuilder } = require('discord.js');
 
+module.exports = {
+    name: 'av',
+    description: 'Displays the avatar of the specified user.',
+    execute(message) {
+        const user = message.mentions.users.first() || message.author;
+        const avatarEmbed = new EmbedBuilder()
+            .setTitle(`${user.username}'s avatar`)
+            .setColor(0x333333)
+            .setImage(user.displayAvatarURL({ dynamic: true, size: 2048 }));
 
-module.exports.run = async(client,message,args)=>{
-  let ad = message.mentions.users.first() ;
-  if(!ad) return message.reply(`User Not Specified !`)
-
-  let avatar = ad.displayAvatarURL({ dynamic: true, format: 'png', });
-  let attachment = new Discord.MessageAttachment(avatar);
-    message.channel.send(attachment)
-    message.channel.send("You look Cool Man!!")
-}
-
-module.exports.help ={
-    name:"av"
-}
+        message.channel.send({ embeds: [avatarEmbed] });
+    },
+}; 

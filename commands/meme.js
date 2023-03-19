@@ -1,21 +1,28 @@
-const Discord = require('discord.js');
-const got = require('got') // npm install got
+const axios = require('axios');
+const { EmbedBuilder } = require('discord.js');
 
-  module.exports.run = async (client, message, args) => {
+module.exports = {
+  name: 'meme',
+  description: 'Sends a random meme from r/memes',
+  async execute(message) {
+    try {
+      const response = await axios.get('https://www.reddit.com/r/memes/random.json');
+      const data = response.data[0].data.children[0].data;
+      const title = data.title;
+      const image = data.url;
+      const subreddit = data.subreddit_name_prefixed;
 
-            got('https://www.reddit.com/r/memes/random/.json').then(res => {
-                let content = JSON.parse(res.body)
-                message.channel.send(
-                    new Discord.MessageEmbed()
-                        .setTitle(content[0].data.children[0].data.title)     
-                        .setImage(content[0].data.children[0].data.url)
-                        .setColor("RANDOM")
-                        .setFooter(`👍 ${content[0].data.children[0].data.ups} | 👎 ${content[0].data.children[0].data.downs} | 💬 ${content[0].data.children[0].data.num_comments}`)
-                )
-            })
-        }
-    
+      const embed = new EmbedBuilder()
+        .setColor('#1ad0f6')
+        .setTitle(title)
+        .setURL(`https://www.reddit.com${data.permalink}`)
+        .setImage(image)
+        .setFooter({text:subreddit});
 
-module.exports.help = { // Update according to your handler. lol
-    name: "meme",
+      message.channel.send({ embeds: [embed] });
+    } catch (error) {
+      console.error(error);
+      message.reply('Sorry, an error occurred while processing the command.');
     }
+  },
+};
