@@ -59,7 +59,7 @@ client.on(Events.InteractionCreate, async interaction => {
 		}
 	}
 });
-const rest = new REST({ version: '10' }).setToken('NzU2NTM4NDY5MTA2NTgxNTU0.GJdi8U.wo9NBxewyXYDKsA0lqpbnwCkrZ7_BbyTjFPuL8');
+const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 (async () => {
   for (const folder of commandFolders) {
     const commandsPath = path.join(foldersPath, folder);
@@ -89,4 +89,4 @@ const rest = new REST({ version: '10' }).setToken('NzU2NTM4NDY5MTA2NTgxNTU0.GJdi
     console.error(error);
   }
 })();
-client.login('NzU2NTM4NDY5MTA2NTgxNTU0.GJdi8U.wo9NBxewyXYDKsA0lqpbnwCkrZ7_BbyTjFPuL8');
+client.login(process.env.TOKEN);
