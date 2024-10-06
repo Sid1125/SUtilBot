@@ -1,99 +1,92 @@
-const { Client, intents, Collection, GatewayIntentBits, Partials, interactionCreate, ActivityType } = require('discord.js');
-const { createAudioPlayer, createAudioResource, joinVoiceChannel, NoSubscriberBehavior, StreamType } = require('@discordjs/voice');
+const { Client, GatewayIntentBits, Partials, InteractionType, ActivityType, Collection,  Events } = require('discord.js');
 const { EmbedBuilder } = require('discord.js');
-const ytdl = require('ytdl-core');
-const musicQueue = new Map();
-const fs =require('fs');
+const { SlashCommandBuilder } = require("@discordjs/builders");
+const fs = require('fs');
+const { clientId, guildId, token } = require('./config.json');
+const { REST, Routes } = require('discord.js');
 const client = new Client({
-    intents: [
-      GatewayIntentBits.Guilds,
-      GatewayIntentBits.GuildMessages,
-      GatewayIntentBits.GuildPresences,
-      GatewayIntentBits.GuildMessageReactions,
-      GatewayIntentBits.DirectMessages,
-      GatewayIntentBits.MessageContent,
-      GatewayIntentBits.GuildMembers,
-      GatewayIntentBits.GuildVoiceStates
-    ],
-    partials: [
-      Partials.Channel,
-      Partials.Message,
-      Partials.User,
-      Partials.GuildMember,
-      Partials.Reaction
-    ]
-  });
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildMessageReactions,
+    GatewayIntentBits.DirectMessages,
+    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildVoiceStates
+  ],
+  partials: [
+    Partials.Channel,
+    Partials.Message,
+    Partials.User,
+    Partials.GuildMember,
+    Partials.Reaction
+  ]
+});
+const path = require('node:path');
+module.exports = client;
 
+client.commands = new Collection();
+const commands = [];
+const foldersPath = path.join(__dirname, 'commands');
+const commandFolders = fs.readdirSync(foldersPath);
 
-  const prefix = '!';
+client.once('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setPresence({
+    activities: [{ name: `!help in ${client.guilds.cache.size} servers`, type: ActivityType.Listening }],
+    status: 'online',
+  });
+});
 
-  client.commands = new Collection();
-  const commandFiles = require('fs').readdirSync('./commands').filter(file => file.endsWith('.js'));
-  
-  for (const file of commandFiles) {
-    const command = require(`./commands/${file}`);
-    client.commands.set(command.name, command);
-    console.log(`Loaded command ${command.name}`);
-  }
-  
-  client.once('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-      client.user.setPresence({
-      activities: [{ name: `!help in ${client.guilds.cache.size} servers`, type: ActivityType.Listening }],
-      status: 'online',
-    });
-  });
-  
-  client.on('interactionCreate', async interaction => {
-    if (!interaction.isCommand()) return;
-  
-    const command = client.commands.get(interaction.commandName);
-  
-    if (!command) return;
-  
-    try {
-      await command.execute(interaction);
-    } catch (error) {
-      console.error(error);
-      await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
-    }
-  });
-  
-  client.on('messageCreate', async message => {
-    if (message.author.bot || !message.content.startsWith(prefix)) return;
-  
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
-    const commandName = args.shift().toLowerCase();
-  
-    const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-  
-    if (!command) return;
-  
-    try {
-      await command.execute(message, args, client);
-    } catch (error) {
-      console.error(error);
-      await message.reply({ content: 'There was an error while executing this command!', ephemeral: true });
-    }
-  });
-  
-  async function playMusic(voiceChannel, connection, url) {
-    try {
-      const stream = await ytdl(url, { filter: 'audioonly' });
-      const player = connection.receiver.createStream();
-      player.on('error', console.error);
-      const dispatcher = connection.play(player, { type: 'opus', volume: false, bitrate: 'auto' });
-      dispatcher.on('error', console.error);
-      dispatcher.on('finish', () => {
-        console.log('Music ended');
-        voiceChannel.leave();
-      });
-      dispatcher.setVolumeLogarithmic(1 / 5);
-      return { status: true, message: 'Playing...' };
-    } catch (error) {
-      console.log(error);
-      return { status: false, message: 'Error playing the video.' };
+client.on(Events.InteractionCreate, async interaction => {
+	if (!interaction.isChatInputCommand()) return;
+
+	const command = interaction.client.commands.get(interaction.commandName);
+
+	if (!command) {
+		console.error(`No command matching ${interaction.commandName} was found.`);
+		return;
+	}
+
+	try {
+		await command.execute(interaction);
+	} catch (error) {
+		console.error(error);
+		if (interaction.replied || interaction.deferred) {
+			await interaction.followUp({ content: 'There was an error while executing this command!', ephemeral: true });
+		} else {
+			await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+		}
+	}
+});
+const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
+(async () => {
+  for (const folder of commandFolders) {
+    const commandsPath = path.join(foldersPath, folder);
+    const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
+    for (const file of commandFiles) {
+      const filePath = path.join(commandsPath, file);
+      const command = require(`./commands/${folder}/${file}`);
+      // Set a new item in the Collection with the key as the command name and the value as the exported module
+      if ('data' in command && 'execute' in command) {
+        client.commands.set(command.data.name, command);
+        commands.push(command.data);
+      } else {
+        console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
+      }
     }
   }
-  
-  client.login(DJS_TOKEN);
+  try {
+    console.log(`Started refreshing ${commands.length} application (/) commands.`);
+    // The put method is used to fully refresh all commands in the guild with the current set
+    const data = await rest.put(
+      Routes.applicationCommands(clientId),
+      { body: commands },
+    );
+    console.log(`Successfully reloaded ${data.length} application (/) commands.`);
+  } catch (error) {
+    // And of course, make sure you catch and log any errors!
+    console.error(error);
+  }
+})();
+client.login(process.env.TOKEN);
