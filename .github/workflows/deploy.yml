@@ -3,7 +3,7 @@ name: Deploy Discord Bot
 on:
   push:
     branches:
-      - Sid1125-patch-2  # Change this to your default branch if different
+      - main  # Change this to your default branch if different
 
 jobs:
   build:
