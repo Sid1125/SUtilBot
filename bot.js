@@ -59,7 +59,7 @@ client.on(Events.InteractionCreate, async interaction => {
 		}
 	}
 });
-const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
+const rest = new REST({ version: '10' }).setToken(${TOKEN});
 (async () => {
   for (const folder of commandFolders) {
     const commandsPath = path.join(foldersPath, folder);
@@ -89,4 +89,4 @@ const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
     console.error(error);
   }
 })();
-client.login(process.env.TOKEN);
+client.login(${TOKEN});
